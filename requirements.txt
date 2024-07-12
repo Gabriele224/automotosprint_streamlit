@@ -3,7 +3,7 @@ uvicorn
 sqlalchemy
 sqlalchemy_orm
 sqlalchemy_ext
-mysql
+mysql-connector-python
 pymysql
 streamlit
 requests
