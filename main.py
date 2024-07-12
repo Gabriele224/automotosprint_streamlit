@@ -14,11 +14,13 @@ import pandas as pd
 
 app = FastAPI()
 
-SQLALCHEMY_DATABASE_URL='mysql+pymysql://gabriele:Gabry678@localhost:3306/automotosprint'
-engine = create_engine(SQLALCHEMY_DATABASE_URL)
+DATABASE_URL='mysql+pymysql://gabriele:Gabry678@localhost:3306/automotosprint'
+engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
-
+# Function to run FastAPI server
+def run_fastapi():
+    uvicorn.run(app, host="127.0.0.1", port=8000)
 # Definizione delle tabelle
 class clienti(Base): ## nome classi lettera grande
     __tablename__="clienti"
@@ -428,9 +430,6 @@ class Crudprodotto():
         db.commit()
         return {"message":f"L'ordine {db_prod} eliminato con successo"},200
 
-# Function to run FastAPI server
-def run_fastapi():
-    uvicorn.run(app, host="127.0.0.1", port=8000)
 
 # Streamlit function
 def streamlit_app():
