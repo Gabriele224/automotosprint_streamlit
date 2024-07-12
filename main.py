@@ -490,7 +490,7 @@ def streamlit_app():
             simple=pd.DataFrame(s)
             st.write(simple)
         else:
-            st.info("Nessun  trovato!!"))
+            st.info("Nessun  trovato!!")
 
     st.title("Query Clienti 3),4),7)")
     st.header('3)Elenca i clienti indicando quanti ordini hanno effettuato(ordine_clienti)')
