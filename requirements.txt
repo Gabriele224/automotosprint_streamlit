@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+sqlalchemy
+sqlalchemy_orm
+sqlalchemy_ext
+mariadb
+pymysql
+streamlit
+requests
+pandas
+datetime
+typing
