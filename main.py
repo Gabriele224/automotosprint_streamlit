@@ -434,8 +434,13 @@ def run_fastapi():
 # Streamlit function
 def streamlit_app():
     def get_simple(Query):
-        response=requests.get(f"http://127.0.0.1:8000/{Query}")
-        return response.json()
+        try:
+            response = requests.get(f"http://127.0.0.1:8000/{Query}")
+            response.raise_for_status()
+            return response.json()
+        except requests.exceptions.RequestException as e:
+            st.error(f"Error: {e}")
+            return None
     
 
     def clienti_total(clienti_box):
