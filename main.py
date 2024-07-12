@@ -436,7 +436,7 @@ def run_fastapi():
 def streamlit_app():
     def get_simple(Query):
         response=requests.get(f"http://127.0.0.1:8000/{Query}")
-        return response.json()
+        return {f"clienti\n {response.encoding()}"}
     
 
     def clienti_total(clienti_box):
