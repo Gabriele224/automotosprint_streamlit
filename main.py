@@ -488,7 +488,7 @@ def streamlit_app():
         s=get_simple(Query)
         if isinstance(s,list):
             simple=pd.DataFrame(s)
-            st.dataframe(simple)
+            st.write(simple)
         else:
             st.info("Nessun  trovato!!"))
 
