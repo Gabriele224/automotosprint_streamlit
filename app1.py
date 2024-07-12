@@ -7,7 +7,7 @@ import pandas as pd
 
 # url per le fastapi
 
-BASE_URL= "http://fastapi:8000"
+BASE_URL= "http://127.0.0.1:8000"
 
 #funzioni per le api
 
