@@ -486,11 +486,11 @@ def streamlit_app():
     Query=st.selectbox("Segli tra queste operazioni:\n",query_operazione)
     if st.button("Esequi la scelta"):
         s=get_simple(Query)
-        if s:
-            #simple=pd.DataFrame(s)
-            st.write(s)
+        if isinstance(s,list):
+            simple=pd.DataFrame(s)
+            st.dataframe(simple)
         else:
-            st.info("Nessun  trovato!!")
+            st.info("Nessun  trovato!!"))
 
     st.title("Query Clienti 3),4),7)")
     st.header('3)Elenca i clienti indicando quanti ordini hanno effettuato(ordine_clienti)')
